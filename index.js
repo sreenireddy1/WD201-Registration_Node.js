@@ -32,6 +32,7 @@ fs.readFile("./registration.js", (err, data) => {
   });
 
 let args=require("minimist")(process.argv.slice(2));
+let port=args.port;
 
 http.createServer((request,response)=>{
     let url=request.url;
@@ -55,4 +56,4 @@ http.createServer((request,response)=>{
             response.end();
             break;
     }
-}).listen(args.port);
+}).listen(port);
